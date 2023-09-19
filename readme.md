@@ -1,13 +1,12 @@
 # Apple 香港刷库存脚本
 
-每5秒轮询一次接口，检测到有库存之后会播送语音提醒（只测试过mac），并记录在available.log中
+每5秒轮询一次接口，检测到有库存之后会播送语音提醒（只测试过mac）或推送通知到bark，并记录在available.log中
 
 ## 使用指南
 
 1. 安装Python并配置环境
-2. 将目标型号代码配置到config.json
-3. 运行脚本，等待提醒
-4. 目前蓝色256Pro一直是有货状态，可以测试一下语音提醒是否生效
+2. 将目标型号代码、bark的token、是否启用bark、语音通知等配置到config.json
+3. 运行query.py脚本，等待通知
 
 ## 环境
 
@@ -32,3 +31,7 @@ Python
 |  15 Pro Max 原色  | \ | MU2Q3ZA/A | MU2V3ZA/A | MU603ZA/A |
 |  15 Pro Max 白色  | \ | MU2P3ZA/A | MU2U3ZA/A | MU2Y3ZA/A |
 |  15 Pro Max 黑色  | \ | MU2N3ZA/A | MU2T3ZA/A | MU2X3ZA/A |
+
+## 其他注意事项
+
+相对于其他刷库存的脚本，5秒已经是一个较长的间隔，但是长时间连续的请求仍可能导致接口超时，如果遇到多次超时，请中断运行一段时间后再重新启用
