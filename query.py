@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 import time
 import urllib3
+import logging
 from loguru import logger
 
 
@@ -61,7 +62,8 @@ class HkAppleStoreHelper:
                 currentDateAndTime = datetime.now()
                 print(str(currentDateAndTime) + ':' + name + '無貨')
             time.sleep(5)
-        except Exception:
+        except Exception as e:
+            logging.exception(e)
             currentDateAndTime = datetime.now()
             print(str(currentDateAndTime) + ': timeout, retrying')
 
@@ -87,7 +89,11 @@ class HkAppleStoreHelper:
         }
         body = {
             'title': 'iPhone已備妥',
-            'body': text
+            'body': text,
+            'level': 'timeSensitive',
+            'icon': 'https://e7.pngegg.com/pngimages/980/413/png-clipart-apple-logo-business-iphone-apple-heart-computer.png',
+            'isArchive': 0,
+            'url': 'applestore://'
         }
         resp = self.bark_session.post(
             self.bark_url, headers=headers, json=body, verify=False)

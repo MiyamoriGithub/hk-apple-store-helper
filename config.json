@@ -5,7 +5,7 @@
      },
      "notification": {
           "bark": {
-               "barkEnabled": false,
+               "barkEnabled": true,
                "barkUrl": "https://api.day.app/your-token/"
           },
           "voiceEnabled": true

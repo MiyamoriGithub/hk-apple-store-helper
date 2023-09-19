@@ -7,6 +7,8 @@
 1. 安装Python并配置环境
 2. 将目标型号代码、bark的token、是否启用bark、语音通知等配置到config.json
 3. 运行query.py脚本，等待通知
+4. bark通知配置了URL scheme，点击通知可以直接跳转到Apple Store App下单（但是如果你已经在结账页则会返回到“为你推荐”，请谨慎使用该特性）
+5. 可以使用iPhone13代码：MLDY3ZA/A 测试通知和语音提醒效果
 
 ## 环境
 
