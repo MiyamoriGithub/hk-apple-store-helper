@@ -1,4 +1,14 @@
 {
-     "module": "MTQC3ZA/A",
-     "name": "Pro白色256GB"
+     "module": {
+          "module": "MTQ93ZA/A",
+          "name": "Pro白色256GB"
+     },
+     "notification": {
+          "bark": {
+               "barkEnabled": false,
+               "barkUrl": "https://api.day.app/your-token/"
+          },
+          "voiceEnabled": true
+     },
+     "logEnabled": true
 }
